@@ -4,9 +4,20 @@ import Image from 'next/image';
 import Input from 'components/input';
 import Button from 'components/button';
 import { useState } from 'react';
+import ButtonSlider from 'components/buttonSlider';
 
 const index = () => {
   const [isCompany, setIsCompany] = useState(false);
+  const [activeButton, setActiveButton] = useState(1);
+
+  const buttons = [
+    {
+      id: 1,
+      name: 'Company',
+    },
+    { id: 2, name: 'Job Seeker' },
+  ];
+
   return (
     <div className="my-[80px]">
       <div className="container">
@@ -21,26 +32,11 @@ const index = () => {
             <div className="text-[#959595] text-xl mb-[50px] text-center">
               Please enter your details to log in.
             </div>
-            <div className="flex mb-10 border border-[#2081c3] rounded-md">
-              <a
-                href="#"
-                onClick={() => setIsCompany(true)}
-                className={`w-1/2 text-center border-r p-2 ${
-                  isCompany ? 'text-white bg-[#2081c3]' : ''
-                }`}
-              >
-                Company
-              </a>
-              <a
-                onClick={() => setIsCompany(false)}
-                href="#"
-                className={`w-1/2 text-center p-2 ${
-                  !isCompany ? 'text-white bg-[#2081c3]' : ''
-                }`}
-              >
-                Job Seeker
-              </a>
-            </div>
+            <ButtonSlider
+              buttons={buttons}
+              activeButton={activeButton}
+              setActiveButton={setActiveButton}
+            ></ButtonSlider>
             <Input type="text" label="Email" className="mb-8" />
             <Input type="password" label="Password" className="mb-3" />
             <div className="text-right mb-8">
