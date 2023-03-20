@@ -8,6 +8,7 @@ import LinkedIn from '@mui/icons-material/LinkedIn';
 import Facebook from '@mui/icons-material/Facebook';
 import Twitter from '@mui/icons-material/Twitter';
 import Instagram from '@mui/icons-material/Instagram';
+import InsertDriveFileOutlined from '@mui/icons-material/InsertDriveFileOutlined';
 const index = () => {
   const tabs = [
     { id: 0, name: 'Business Info' },
@@ -19,7 +20,7 @@ const index = () => {
   return (
     <>
       <Header />
-      <div className="bg-blue h-[300px] py-[50px] -mb-24">
+      <div className="bg-blue h-[240px] py-[50px] -mb-24">
         <div className="container">
           <a href="" className="flex items-center text-white">
             <ArrowBack className="mr-2" />
@@ -47,7 +48,7 @@ const index = () => {
           setCurrentTab={setCurrentTab}
         />
         {currentTab == 0 ? (
-          <>
+          <div className="w-1/2">
             <div className="mb-8">
               <div className="font-medium text-xl mb-2">Biography</div>
               <div className="">
@@ -91,6 +92,22 @@ const index = () => {
               </div>
             </div>
             <div className="mb-8">
+              <div className="font-medium text-xl mb-2">Documents</div>
+              <div className="flex flex-col">
+                <a
+                  href="#"
+                  className="text-blue underline flex items-center mb-2"
+                >
+                  <InsertDriveFileOutlined className="mr-2" />
+                  Business Certificate.pdf
+                </a>
+                <a href="#" className="text-blue underline flex items-center ">
+                  <InsertDriveFileOutlined className="mr-2" />
+                  Revenue.pdf
+                </a>
+              </div>
+            </div>
+            <div className="mb-8">
               <div className="font-medium text-xl mb-2">Industry</div>
               <div className="">Technology</div>
             </div>
@@ -101,25 +118,25 @@ const index = () => {
             <div className="mb-8">
               <div className="font-medium text-xl mb-2">Days of Work</div>
               <div className="flex items-center">
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] border border-blue text-black">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] border border-blue text-black">
                   Su
                 </div>
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] bg-blue text-white">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] bg-blue text-white">
                   Mo
                 </div>
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] bg-blue text-white">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] bg-blue text-white">
                   Tu
                 </div>
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] bg-blue text-white">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] bg-blue text-white">
                   We
                 </div>
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] bg-blue text-white">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] bg-blue text-white">
                   Th
                 </div>
-                <div className="rounded-md flex items-center justify-center mr-2 w-[50px] h-[50px] bg-blue text-white">
+                <div className="rounded-md flex items-center justify-center mr-2 w-[40px] h-[40px] bg-blue text-white">
                   Fr
                 </div>
-                <div className="rounded-md flex items-center justify-center w-[50px] h-[50px] border border-blue text-black">
+                <div className="rounded-md flex items-center justify-center w-[40px] h-[40px] border border-blue text-black">
                   Sa
                 </div>
               </div>
@@ -132,9 +149,22 @@ const index = () => {
               <div className="font-medium text-xl mb-2">Number of workers</div>
               <div className="">28</div>
             </div>
-          </>
+          </div>
         ) : (
-          <div>Tech Stack</div>
+          <div className="mb-8">
+            <div className="font-medium text-xl mb-2">Tech Stack</div>
+            <div className="flex items-center">
+              <div className="px-2 py-1 rounded-md flex items-center justify-center mr-2 bg-blue text-white">
+                Javascript
+              </div>
+              <div className="px-2 py-1 rounded-md flex items-center justify-center mr-2 bg-blue text-white">
+                HTML
+              </div>
+              <div className="px-2 py-1 rounded-md flex items-center justify-center mr-2 bg-blue text-white">
+                CSS
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </>
