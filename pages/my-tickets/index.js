@@ -9,7 +9,7 @@ export default function index() {
   return (
     <div className="container pt-24">
       <h1 className="text-[37px]">My tickets</h1>
-      <div className="flex flex-row mt-7 flex-wrap [&>*:nth-child(4n)]:mr-0">
+      <div className="grid grid-cols-4 gap-5">
         {testTickets.map((ticket) => (
           <Ticket ticket={ticket} />
         ))}
