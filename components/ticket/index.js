@@ -1,7 +1,7 @@
 export default function Ticket({ ticket }) {
   const matchesBgColor = ticket.matches > 0 ? 'bg-[#FF874F]' : 'bg-[#D9D9D9]';
   return (
-    <div className="w-[23%] h-[238px] border border-[#CBCBCB] rounded-[10px] p-5 flex flex-col justify-between mb-8">
+    <div className="w-[22.98%] h-[238px] border border-[#CBCBCB] rounded-[10px] p-5 flex flex-col justify-between mb-8 mr-8">
       <div>
         <span
           className={

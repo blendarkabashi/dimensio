@@ -1,11 +1,15 @@
 import React from 'react';
+import Image from 'next/image';
 import Ticket from 'components/ticket';
+import Button from 'components/button';
+import NoTicketsIcon from 'public/images/no-tickets.svg';
 
 export default function index() {
+  if (testTickets.length === 0) return <NoTickets />;
   return (
     <div className="container pt-24">
       <h1 className="text-[37px]">My tickets</h1>
-      <div className="flex flex-row mt-7 justify-between flex-wrap">
+      <div className="flex flex-row mt-7 flex-wrap [&>*:nth-child(4n)]:mr-0">
         {testTickets.map((ticket) => (
           <Ticket ticket={ticket} />
         ))}
@@ -14,6 +18,16 @@ export default function index() {
   );
 }
 
+const NoTickets = () => {
+  return (
+    <div className="flex flex-col justify-center text-center items-center pt-24">
+      <h1 className="text-[37px]">You currently have no tickets</h1>
+      <Button className="mt-7 px-8">Create ticket</Button>
+      <Image className="mt-20" src={NoTicketsIcon} />
+    </div>
+  );
+};
+const testTickets1 = [];
 const testTickets = [
   {
     title: 'Ticket 1',
