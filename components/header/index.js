@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header>
       <nav className="bg-white  py-4 border-b-[1px] border-[#CBCBCB]">
-        <div className="flex flex-wrap justify-between items-center mx-[246px]">
+        <div className="flex flex-wrap justify-between items-center container">
           <Link href={'/'} className="flex flex-row items-center">
             <Image src={logo} className="mr-3 h-6 sm:h-9" alt="dimensio logo" />
             <p>Dimensio</p>
