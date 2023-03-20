@@ -29,7 +29,7 @@ const index = () => {
             <div className="text-5xl font-medium mb-3 text-center">
               Welcome back!
             </div>
-            <div className="text-[#959595] text-xl mb-[50px] text-center">
+            <div className="text-darkGray text-xl mb-[50px] text-center">
               Please enter your details to log in.
             </div>
             <ButtonSlider

@@ -7,7 +7,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
         type={type}
         value={value}
         placeholder={placeholder}
-        className={`${className} border border-[#959595] rounded-md p-2 w-full`}
+        className={`${className} border border-darkGray rounded-md p-2 w-full`}
       />
     );
   };
@@ -18,7 +18,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
           type="file"
           placeholder={placeholder}
           value={value}
-          className={`${className} border border-[#959595] rounded-md p-2 w-full`}
+          className={`${className} border border-darkGray rounded-md p-2 w-full`}
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           <UploadIcon className="h-5" color="primary" />
@@ -31,7 +31,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
       <textarea
         value={value}
         placeholder={placeholder}
-        className={`${className} min-h-[400px] border border-[#959595] rounded-md p-2 w-full`}
+        className={`${className} min-h-[400px] border border-darkGray rounded-md p-2 w-full`}
       />
     );
   };
@@ -41,7 +41,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
         type={type}
         value={value}
         placeholder={placeholder}
-        className={`${className} border border-[#959595] rounded-md p-2 w-full`}
+        className={`${className} border border-darkGray rounded-md p-2 w-full`}
       />
     );
   };
