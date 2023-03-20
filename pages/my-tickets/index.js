@@ -8,7 +8,7 @@ export default function index() {
   if (testTickets.length === 0) return <NoTickets />;
   return (
     <div className="container pt-24">
-      <h1 className="text-[37px]">My tickets</h1>
+      <h1 className="text-[37px] mb-4 font-medium">My tickets</h1>
       <div className="grid grid-cols-4 gap-5">
         {testTickets.map((ticket) => (
           <Ticket ticket={ticket} />
