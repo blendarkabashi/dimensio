@@ -3,18 +3,25 @@ import Image from 'next/image';
 import Ticket from 'components/ticket';
 import Button from 'components/button';
 import NoTicketsIcon from 'public/images/no-tickets.svg';
+import Header from 'components/header';
 
 export default function index() {
-  if (testTickets.length === 0) return <NoTickets />;
   return (
-    <div className="container pt-24">
-      <h1 className="text-[37px] mb-4 font-medium">My tickets</h1>
-      <div className="grid grid-cols-4 gap-5">
-        {testTickets.map((ticket) => (
-          <Ticket ticket={ticket} />
-        ))}
-      </div>
-    </div>
+    <>
+      <Header />
+      {testTickets.length === 0 ? (
+        <NoTickets />
+      ) : (
+        <div className="container pt-24">
+          <h1 className="text-[37px] mb-4 font-medium">My tickets</h1>
+          <div className="grid grid-cols-4 gap-5">
+            {testTickets.map((ticket) => (
+              <Ticket ticket={ticket} />
+            ))}
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 
@@ -27,7 +34,6 @@ const NoTickets = () => {
     </div>
   );
 };
-const testTickets1 = [];
 const testTickets = [
   {
     title: 'Ticket 1',
