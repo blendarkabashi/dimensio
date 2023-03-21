@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import logo from 'public/images/logo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,6 +7,12 @@ import AddIcon from '@mui/icons-material/Add';
 import { items } from './list';
 
 export default function Header() {
+  const router = useRouter();
+  const hideHeader =
+    router.pathname === '/login' || router.pathname === '/register';
+
+  if (hideHeader) return;
+
   return (
     <header>
       <nav className="bg-white  py-4 border-b-[1px] border-[#CBCBCB]">
@@ -22,12 +29,12 @@ export default function Header() {
               <AddIcon className="mr-2" />
               New ticket
             </Link>
-            <div class="rounded-full border-[1px] border-blue w-[45px] h-[45px]"></div>
+            <div className="rounded-full border-[1px] border-blue w-[45px] h-[45px]"></div>
           </div>
           <div className="justify-between text-base items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="flex flex-col mt-4 lg:flex-row lg:space-x-[40px] lg:mt-0">
               {items.map((item) => (
-                <li>
+                <li key={item.link}>
                   <Link
                     href={item.link}
                     className="block  text-black hover:text-blue"

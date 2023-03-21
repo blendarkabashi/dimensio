@@ -19,7 +19,6 @@ const index = () => {
 
   return (
     <>
-      <Header />
       <div className="bg-blue h-[240px] py-[50px] -mb-24">
         <div className="container">
           <a href="" className="flex items-center text-white">
