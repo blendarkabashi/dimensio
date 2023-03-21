@@ -1,9 +1,9 @@
-import React from 'react';
 import Image from 'next/image';
-import Ticket from 'components/ticket';
+import Layout from 'components/layout';
+import Card from 'components/card';
 import Button from 'components/button';
 import NoTicketsIcon from 'public/images/no-tickets.svg';
-import Header from 'components/header';
+import types from 'components/card/types';
 
 export default function index() {
   return (
@@ -11,14 +11,13 @@ export default function index() {
       {testTickets.length === 0 ? (
         <NoTickets />
       ) : (
-        <div className="container pt-24">
-          <h1 className="text-[37px] mb-4 font-medium">My tickets</h1>
+        <Layout title="My tickets">
           <div className="grid grid-cols-4 gap-5">
             {testTickets.map((ticket) => (
-              <Ticket key={ticket.title} ticket={ticket} />
+              <Card key={ticket.title} ticket={ticket} type={types.TICKET} />
             ))}
           </div>
-        </div>
+        </Layout>
       )}
     </>
   );
@@ -33,6 +32,7 @@ const NoTickets = () => {
     </div>
   );
 };
+
 const testTickets = [
   {
     title: 'Ticket 1',

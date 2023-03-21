@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRouter } from 'next/router';
 import logo from 'public/images/logo.svg';
 import Image from 'next/image';

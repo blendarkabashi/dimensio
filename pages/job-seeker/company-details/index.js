@@ -1,4 +1,3 @@
-import Header from 'components/header';
 import ArrowBack from '@mui/icons-material/ArrowBack';
 import Edit from '@mui/icons-material/EditOutlined';
 import Tabs from 'components/tabs';
@@ -9,6 +8,7 @@ import Facebook from '@mui/icons-material/Facebook';
 import Twitter from '@mui/icons-material/Twitter';
 import Instagram from '@mui/icons-material/Instagram';
 import InsertDriveFileOutlined from '@mui/icons-material/InsertDriveFileOutlined';
+
 const index = () => {
   const tabs = [
     { id: 0, name: 'Business Info' },
