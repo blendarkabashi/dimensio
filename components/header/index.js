@@ -8,7 +8,7 @@ import { items } from './list';
 export default function Header() {
   const router = useRouter();
   const hideHeader =
-    router.pathname === '/login' || router.pathname === '/register';
+    router.pathname.includes('login') || router.pathname.includes('register');
 
   if (hideHeader) return;
 
