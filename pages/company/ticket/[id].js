@@ -11,7 +11,7 @@ export default function index() {
       <div className="bg-lightGray pt-12">
         <div className="container">
           <div className="flex flex-row justify-between items-center mb-4 border-b-[1px] border-black">
-            <h1 className="text-[37px] font-medium">Ticket 2</h1>
+            <h1 className=" text-[28px]">Ticket 2</h1>
             <span className=" cursor-pointer">
               <EditIcon className="mr-2" />
               Edit
