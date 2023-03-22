@@ -1,5 +1,6 @@
 import UploadIcon from '@mui/icons-material/Upload';
 import { useState } from 'react';
+import CalendarMonth from '@mui/icons-material/CalendarMonth';
 
 const Input = ({ type, label, value, className, placeholder }) => {
   let commonClasses = 'border-darkGray rounded-md w-full border p-2 px-3';
@@ -23,12 +24,15 @@ const Input = ({ type, label, value, className, placeholder }) => {
   };
   const dateInput = () => {
     return (
-      <input
-        type={type}
-        value={value}
-        placeholder={placeholder}
-        className={`${className} ${commonClasses}`}
-      />
+      <div className="relative">
+        <input
+          type={type}
+          value={value}
+          placeholder={placeholder}
+          className={`${className} ${commonClasses} focus:ring-transparent focus:border-darkGray`}
+        />
+        <CalendarMonth className="h-5 text-blue absolute top-[10px] right-[10px] bg-white" />
+      </div>
     );
   };
   const fileUploadInput = () => {
