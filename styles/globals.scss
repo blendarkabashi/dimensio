@@ -48,3 +48,16 @@ button {
 ::placeholder {
   color: #F5F5F5;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  z-index: 99999;
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+}
