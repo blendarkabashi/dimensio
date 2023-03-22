@@ -5,8 +5,28 @@ import Input from 'components/input';
 import Button from 'components/button';
 import { useState } from 'react';
 import ButtonSlider from 'components/buttonSlider';
-
+import Dropdown from 'components/dropdown';
+import DaysOfWorkSelect from 'components/select/days-of-work';
+import ChipSelect from 'components/select/chipSelect';
 const index = () => {
+  const [techStack, setTechStack] = useState([]);
+  const [option, setOption] = useState(0);
+  const [selectedDaysOfWork, setSelectedDaysOfWork] = useState([1, 2, 3, 4, 5]);
+
+  const options = [
+    {
+      id: 0,
+      name: 'Small (0-20 workers)',
+    },
+    {
+      id: 1,
+      name: 'Medium (20-40 workers)',
+    },
+    {
+      id: 2,
+      name: 'Big (40+ workers)',
+    },
+  ];
   return (
     <div className="my-[80px]">
       <div className="container">
@@ -21,8 +41,39 @@ const index = () => {
             <div className="text-darkGray text-xl mb-[50px] text-center">
               Please fill in the inputs to register.
             </div>
-            <Input type="text" label="Email" className="mb-5" />
+            <Input
+              type="text"
+              label="Email"
+              className="mb-5"
+              placeholder="Frontend Developer"
+            />
             <Input type="password" label="Password" className="mb-5" />
+            <Input
+              type="textarea"
+              label="Short Description"
+              placeholder="Write your description"
+              className="mb-5"
+            />
+            <Input type="currency" label="Desired Income" className="mb-5" />
+            <Dropdown
+              label="Choose your option"
+              className="mb-5"
+              option={option}
+              options={options}
+              setOption={setOption}
+            ></Dropdown>
+            <DaysOfWorkSelect
+              className="mb-5"
+              label="Days of Work"
+              selectedDaysOfWork={selectedDaysOfWork}
+              setSelectedDaysOfWork={setSelectedDaysOfWork}
+            />
+            <ChipSelect
+              className="mb-5"
+              label="Tech stack"
+              selectedOptions={techStack}
+              setSelectedOptions={setTechStack}
+            />
             <Input type="file" label="Upload File" className="mb-5" />
             <div className="flex items-center justify-end">
               <Button className="px-10" type="submit">

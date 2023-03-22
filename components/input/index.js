@@ -1,13 +1,33 @@
 import UploadIcon from '@mui/icons-material/Upload';
+import { useState } from 'react';
 
 const Input = ({ type, label, value, className, placeholder }) => {
+  let commonClasses = 'border-darkGray rounded-md w-full border p-2 px-3';
+  const currencyInput = () => {
+    return (
+      <div className={className}>
+        <div className="relative mt-2 rounded-md shadow-sm">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <span className="">$</span>
+          </div>
+          <input
+            type="text"
+            name="price"
+            id="price"
+            className={`block ${commonClasses} pl-7`}
+            placeholder={placeholder ? placeholder : '0.00'}
+          />
+        </div>
+      </div>
+    );
+  };
   const dateInput = () => {
     return (
       <input
         type={type}
         value={value}
         placeholder={placeholder}
-        className={`${className} border border-darkGray rounded-md p-2 w-full`}
+        className={`${className} ${commonClasses}`}
       />
     );
   };
@@ -18,7 +38,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
           type="file"
           placeholder={placeholder}
           value={value}
-          className={`${className} border border-darkGray rounded-md p-2 w-full`}
+          className={`${className} ${commonClasses}`}
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
           <UploadIcon className="h-5" color="primary" />
@@ -31,7 +51,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
       <textarea
         value={value}
         placeholder={placeholder}
-        className={`${className} min-h-[400px] border border-darkGray rounded-md p-2 w-full`}
+        className={`${className} min-h-[120px] ${commonClasses} resize-none`}
       />
     );
   };
@@ -41,7 +61,7 @@ const Input = ({ type, label, value, className, placeholder }) => {
         type={type}
         value={value}
         placeholder={placeholder}
-        className={`${className} border border-darkGray rounded-md p-2 w-full`}
+        className={`${className} ${commonClasses}`}
       />
     );
   };
@@ -54,6 +74,8 @@ const Input = ({ type, label, value, className, placeholder }) => {
         ? fileUploadInput()
         : type == 'date'
         ? dateInput()
+        : type == 'currency'
+        ? currencyInput()
         : textInput()}
     </>
   );
