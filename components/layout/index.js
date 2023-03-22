@@ -1,8 +1,13 @@
 import Input from 'components/input';
 
-export default function Layout({ children, withSearch = false, title }) {
+export default function Layout({
+  className,
+  children,
+  withSearch = false,
+  title,
+}) {
   return (
-    <div className="container pt-24">
+    <div className={`${className} container pt-24`}>
       {withSearch ? (
         <div className="flex flex-row justify-between items-center mb-4">
           <h1 className="text-[37px] font-medium">{title}</h1>
