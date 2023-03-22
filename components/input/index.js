@@ -1,8 +1,8 @@
-import UploadIcon from '@mui/icons-material/Upload';
+import UploadFile from '@mui/icons-material/UploadFile';
 import { useState } from 'react';
 import CalendarMonth from '@mui/icons-material/CalendarMonth';
 
-const Input = ({ type, label, value, className, placeholder }) => {
+const Input = ({ id, type, label, value, className, placeholder }) => {
   let commonClasses = 'border-darkGray rounded-md w-full border p-2 px-3';
   const currencyInput = () => {
     return (
@@ -37,15 +37,21 @@ const Input = ({ type, label, value, className, placeholder }) => {
   };
   const fileUploadInput = () => {
     return (
-      <div className="relative mt-2 rounded-md shadow-sm">
+      <div className={`relative mt-2 rounded-md shadow-sm ${className}`}>
         <input
+          id={id}
           type="file"
           placeholder={placeholder}
           value={value}
-          className={`${className} ${commonClasses}`}
+          hidden
         />
+        <label for={id} className={`${commonClasses} block cursor-pointer`}>
+          <span id="file-chosen" className="text-darkGray">
+            Upload document here
+          </span>
+        </label>
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-          <UploadIcon className="h-5" color="primary" />
+          <UploadFile className="h-5" color="primary" />
         </div>
       </div>
     );

@@ -75,7 +75,12 @@ const index = () => {
               setSelectedOptions={setTechStack}
             />
             <Input type="date" label="Founding Date" className="mb-5" />
-            <Input type="file" label="Upload File" className="mb-5" />
+            <Input
+              type="file"
+              id="fileupload1"
+              label="Upload Document"
+              className="mb-5"
+            />
             <div className="flex items-center justify-end">
               <Button className="px-10" type="submit">
                 Next Step
