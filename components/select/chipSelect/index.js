@@ -23,7 +23,7 @@ const ChipSelect = ({
       {label && <div className="mb-2">{label}</div>}
       <div
         onClick={() => document.querySelector('.tags-input').focus()}
-        className={`flex flex-wrap items-center border-darkGray rounded-md w-full border px-3 bg-white py-0 min-h-[40px] outline-none `}
+        className={`flex flex-wrap items-center border-darkGray rounded-md w-full border px-3 py-2 bg-white py-0 min-h-[40px] outline-none `}
       >
         {selectedOptions.map((selection, index) => (
           <Chip
@@ -37,9 +37,9 @@ const ChipSelect = ({
           </Chip>
         ))}
         <input
-          className="tags-input border-none outline-none h-full focus:ring-transparent focus:border-none max-w-[175px] p-0"
+          className="tags-input border-none outline-none h-full focus:ring-transparent focus:border-none w-[220px] p-0"
           type="text"
-          placeholder="Add technology stack..."
+          placeholder="Add stack and press enter..."
           onKeyDown={(event) => handleAddChip(event)}
           // onInput={onInput}
           // onChange={onChange}
