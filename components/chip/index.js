@@ -3,7 +3,7 @@ import Close from '@mui/icons-material/Close';
 const Chip = ({ color, children, className, closable, removeChip }) => {
   return (
     <span
-      className={`${className} flex items-center justify-between rounded px-2 py-0.5 text-xs font-medium text-center ${color} ${
+      className={`${className} inline-flex items-center justify-between rounded px-2 py-0.5 text-xs font-medium text-center ${color} ${
         color == 'bg-[#D9D9D9]' ? 'text-black' : 'text-white'
       }`}
     >
