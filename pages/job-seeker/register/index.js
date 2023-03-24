@@ -8,6 +8,7 @@ import ButtonSlider from 'components/buttonSlider';
 import Dropdown from 'components/dropdown';
 import DaysOfWorkSelect from 'components/select/days-of-work';
 import ChipSelect from 'components/select/chipSelect';
+
 const index = () => {
   const [techStack, setTechStack] = useState([]);
   const [option, setOption] = useState(0);
