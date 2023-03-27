@@ -8,8 +8,10 @@ import ButtonSlider from 'components/buttonSlider';
 import Dropdown from 'components/dropdown';
 import DaysOfWorkSelect from 'components/select/days-of-work';
 import ChipSelect from 'components/select/chipSelect';
+import TechStackExperience from 'components/techStackExperience';
 const index = () => {
   const [techStack, setTechStack] = useState([]);
+  const [techStackExperience, setTechStackExperience] = useState([]);
   const [option, setOption] = useState(0);
   const [selectedDaysOfWork, setSelectedDaysOfWork] = useState([1, 2, 3, 4, 5]);
 
@@ -74,6 +76,9 @@ const index = () => {
               selectedOptions={techStack}
               setSelectedOptions={setTechStack}
             />
+            {techStack.length > 0 && (
+              <TechStackExperience options={techStack} className="mb-5" />
+            )}
             <Input type="date" label="Founding Date" className="mb-5" />
             <Input
               type="file"

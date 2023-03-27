@@ -6,9 +6,20 @@ const ChipSelect = ({
   setSelectedOptions,
 }) => {
   const handleAddChip = (event) => {
-    if (event.key == 'Enter' && event.target.value.length) {
-      if (!selectedOptions.includes(event.target.value)) {
-        setSelectedOptions((prevState) => [...prevState, event.target.value]);
+    if (event.key === 'Enter' && event.target.value.length > 0) {
+      const value = event.target.value.trim();
+      const alreadyExists = selectedOptions.some(
+        (option) => option.name === value
+      );
+      if (!alreadyExists) {
+        setSelectedOptions((prevState) => [
+          ...prevState,
+          {
+            id: selectedOptions.length,
+            name: value,
+            yearsOfExperience: 1,
+          },
+        ]);
         setTimeout(() => {
           event.target.value = '';
         }, 1);
@@ -16,7 +27,9 @@ const ChipSelect = ({
     }
   };
   const removeChip = (chipToRemove) => {
-    setSelectedOptions(selectedOptions.filter((chip) => chip !== chipToRemove));
+    setSelectedOptions(
+      selectedOptions.filter((chip) => chip.name !== chipToRemove)
+    );
   };
   return (
     <div className={`${className} cursor-text`}>
@@ -33,7 +46,7 @@ const ChipSelect = ({
             closable
             removeChip={removeChip}
           >
-            {selection}
+            {selection.name}
           </Chip>
         ))}
         <input
