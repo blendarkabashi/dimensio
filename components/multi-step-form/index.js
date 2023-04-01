@@ -71,17 +71,15 @@ const MultiStepForm = ({
         </div>
         <div>
           {currentStep != steps.length + 1 && (
-            <Button onClick={() => setCurrentStep(currentStep + 1)}>
+            <Button
+              className="w-full"
+              onClick={() => setCurrentStep(currentStep + 1)}
+            >
               Next Step
             </Button>
           )}
           {currentStep == steps.length + 1 && (
-            <Button
-              loading={loading}
-              // rightIcon={<ArrowRightIcon height={15} />}
-            >
-              Submit
-            </Button>
+            <Button loading={loading}>Submit</Button>
           )}
         </div>
       </div>
