@@ -12,7 +12,7 @@ export default function Layout({
         <div className="flex flex-row justify-between items-center mb-4">
           <h1 className="text-[37px] font-medium">{title}</h1>
           <Input
-            className="w-64 h-12"
+            className=" max-w-[250px] h-12"
             type="search"
             placeholder="Browse job seekers"
           />

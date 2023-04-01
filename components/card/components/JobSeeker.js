@@ -5,7 +5,7 @@ import types from '../types';
 export default function JobSeeker({ jobSeeker }) {
   return (
     <>
-      <div div className="flex flex-row">
+      <div className="flex flex-row">
         <Image
           className="inline-block h-12 w-12 rounded-full mr-4"
           src={jobSeeker.profilePic}
